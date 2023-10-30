@@ -33,7 +33,7 @@ public class BlumBlumShub {
             bitString.append(bit);
         }
 
-        //Converte a string de bits em um BigInteger
+        //Converte a string de bits em um BigInteger e retorna o numero pseudo aleatório gerado
         return new BigInteger(bitString.toString(), 2);
     }
 }
