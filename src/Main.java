@@ -28,10 +28,10 @@ public class Main {
         int k = 25; // Precisão do teste de Miller-Rabin (Quanto maior, mais preciso)
         MillerRabin millerRabin = new MillerRabin(k);
         System.out.println("Miller-Rabin:");
-        System.out.println(millerRabin.isPrime(randomNumberPM));
+        System.out.println(millerRabin.isPrime(randomNumberBBS));
 
         Fermat fermat = new Fermat(k);
         System.out.println("Fermat:");
-        System.out.println(fermat.isPrime(BigInteger.valueOf(233)));
+        System.out.println(fermat.isPrime(randomNumberBBS));
     }
 }
