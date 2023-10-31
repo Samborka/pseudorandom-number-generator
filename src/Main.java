@@ -1,3 +1,5 @@
+import primality_tester.Fermat;
+import primality_tester.MillerRabin;
 import random_number_generator.BlumBlumShub;
 import random_number_generator.ParkMiller;
 
@@ -7,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         //A semente usada para gerar o número pseudoaleatório é o horário atual do sistema em milissegundos.
         long seed = System.currentTimeMillis();
-        int numBits = 60; //Número de bits do número pseudoaleatório que será gerado
+        int numBits =  40; //Número de bits do número pseudoaleatório que será gerado
 
         // P e Q devem ser números primos grandes. Por simplicidade, estou usando números primos fixos.
         BigInteger p = BigInteger.valueOf(3263849);
@@ -23,5 +25,13 @@ public class Main {
 
         System.out.println("Numero aleatório ParkMiller: " + randomNumberPM); //Print do número gerado
 
+        int k = 25; // Precisão do teste de Miller-Rabin (Quanto maior, mais preciso)
+        MillerRabin millerRabin = new MillerRabin(k);
+        System.out.println("Miller-Rabin:");
+        System.out.println(millerRabin.isPrime(randomNumberPM));
+
+        Fermat fermat = new Fermat(k);
+        System.out.println("Fermat:");
+        System.out.println(fermat.isPrime(BigInteger.valueOf(233)));
     }
 }
