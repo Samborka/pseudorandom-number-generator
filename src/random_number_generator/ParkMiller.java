@@ -21,7 +21,6 @@ public class ParkMiller {
         //Enquanto não forem coprimos, o loop se mantém
         while(!seedBigInteger.gcd(m).equals(BigInteger.ONE)){
             seedBigInteger = a.multiply(seedBigInteger).mod(m); //Atualiza o valor de seedBigInteger utilizando o método de ParkMiller (a*seed mod m)
-
         }
         return seedBigInteger;
     }
